@@ -75,7 +75,7 @@ int main() {
   return 0;
 }
 */
-
+/*
 // Different addreses of two objects
 
 class MyClass {
@@ -94,5 +94,54 @@ int main() {
   //(gdb) p &myClass2
   //$2 = (MyClass *)0x7ffc02cd0767
 
+  return 0;
+}
+*/
+/*
+// Simple inheritance
+
+class Parent {
+public:
+  void Foo() { int a = 5; }
+};
+
+class Derived : public Parent {
+public:
+  void Bar() { int b = 10; }
+};
+
+int main() {
+
+  Derived derived;
+  derived.Foo();
+  derived.Bar();
+
+  //(gdb) print sizeof(derived)
+  //$1 = 1
+
+  return 0;
+}
+*/
+
+// Virtual methods
+
+class Parent {
+public:
+  virtual void Foo() { int a = 5; }
+  virtual ~Parent() {}
+};
+
+class Derived : public Parent {
+public:
+  void Foo() override { int b = 10; }
+};
+
+int main() {
+
+  Derived derived;
+
+  //(gdb) print sizeof(derived)
+  //$1 = 8
+    
   return 0;
 }
