@@ -6,5 +6,5 @@ set(CMAKE_CXX_STANDARD 14)
 add_executable(size_of_class size_of_class.cpp)
 add_executable(virtual virtual.cpp)
 add_executable(print_stack print_stack.cpp)
+add_executable(if_chains if_chains_break.cpp)
 set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -rdynamic")
-
